@@ -12,7 +12,7 @@ namespace seccion3
     {
         static void Main(string[] args)
         {
-            /*Ejemplo de como pedir datos al usuario con el metodo ReadLine*/
+            /*Ejemplo 1. como pedir datos al usuario con el metodo ReadLine*/
             string nombre;
             /*preguntamos al  nombre del usuario*/
             Console.Write("Cual es tu nombre");
@@ -20,10 +20,13 @@ namespace seccion3
             nombre = Console.ReadLine();
             /*saludo al usuario*/
             Console.WriteLine("Hola  como te ecnuentras " + nombre);
+
+
+            /*Ejempl 2. Convertir cadenas en tipo numerico*/
         }
     }
 }
 
 /*El método Write es similar al método WriteLine , excepto que el método Write  *
  * no inserta automáticamente una combinación de caracteres de retorno de carro *
- * o de avance de línea.                                                         */
+ * o de avance de línea.                                                        */
