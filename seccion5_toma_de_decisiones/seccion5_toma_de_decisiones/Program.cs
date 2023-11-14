@@ -10,7 +10,7 @@ namespace seccion5_toma_de_decisiones
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hola Mundo");
+            
 
             Console.ReadKey();
         }
