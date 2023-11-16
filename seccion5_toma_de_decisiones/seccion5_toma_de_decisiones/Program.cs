@@ -55,16 +55,16 @@ namespace seccion5_toma_de_decisiones
             *     >=     /  mayor o igual que   *     
             *************************************/
 
-            Console.WriteLine( 0 < 1); //esto devulve true
-            Console.WriteLine( 1 < 0); //esto devuelve false 
-            Console.WriteLine( 0 > 1); //esto devuelve false 
-            Console.WriteLine( 1 > 0); //esto devulve true
-            Console.WriteLine( 0 <= 1); //esto devulve true
-            Console.WriteLine( 1 <= 0); //esto devuelve false
-            Console.WriteLine( 1 <= 1); //esto devulve true
-            Console.WriteLine( 0 >= 1); //esto devuelve false
-            Console.WriteLine( 1 >= 0); //esto devulve true
-            Console.WriteLine( 1 >= 1); //esto devulve true
+            Console.WriteLine(0 < 1); //esto devulve true
+            Console.WriteLine(1 < 0); //esto devuelve false 
+            Console.WriteLine(0 > 1); //esto devuelve false 
+            Console.WriteLine(1 > 0); //esto devulve true
+            Console.WriteLine(0 <= 1); //esto devulve true
+            Console.WriteLine(1 <= 0); //esto devuelve false
+            Console.WriteLine(1 <= 1); //esto devulve true
+            Console.WriteLine(0 >= 1); //esto devuelve false
+            Console.WriteLine(1 >= 0); //esto devulve true
+            Console.WriteLine(1 >= 1); //esto devulve true
 
             /*Palabras clave en c#
             https://learn.microsoft.com/es-mx/dotnet/csharp/language-reference/keywords/ */
@@ -73,7 +73,7 @@ namespace seccion5_toma_de_decisiones
             Console.WriteLine("***********************     Instrucciones de seleccion IF                  ****************************");
             Console.WriteLine("*******************************************************************************************************");
             /*Instrucciones de seleccion IF*/
-            
+
             /*declaramos variables*/
             double numero1, numero2;
 
@@ -85,19 +85,21 @@ namespace seccion5_toma_de_decisiones
             numero2 = Convert.ToDouble(Console.ReadLine());
 
             /*en caso de que el numero proporcionado sea igual al seugndo numero proprcionado */
-            if (numero1 == numero2) {
-               Console.WriteLine("los dos numeros proporcionados son iguales : {0} = {1}", numero1, numero2);
+            if (numero1 == numero2)
+            {
+                Console.WriteLine("los dos numeros proporcionados son iguales : {0} = {1}", numero1, numero2);
             }
 
             /*en caso que el primer numero sea mayor que el numero dos*/
-            if (numero1 > numero2) {
+            if (numero1 > numero2)
+            {
                 Console.WriteLine("el primer numero es mayor que  que el segundo numero : {0} mayor que {1} ", numero1, numero2);
             }
-            
+
             /*en caso que el primer numero sea menor que el numero dos */
             if (numero1 < numero2)
             {
-               Console.WriteLine("el primer numero es menor que  que el segundo numero : {0} menor que {1}", numero1, numero2);
+                Console.WriteLine("el primer numero es menor que  que el segundo numero : {0} menor que {1}", numero1, numero2);
             }
 
             Console.WriteLine("*******************************************************************************************************");
@@ -124,7 +126,8 @@ namespace seccion5_toma_de_decisiones
             /*IF anidados*/
 
             int suma, resta, multplicacion, division, numeroIfAnidado1, numeroIfAnidado2, opcion;
-            
+
+            Console.WriteLine("0, informacion del programa");
             Console.WriteLine("1. Suma");
             Console.WriteLine("2. Resta");
             Console.WriteLine("3. Multiplicacion");
@@ -132,14 +135,14 @@ namespace seccion5_toma_de_decisiones
             Console.Write("*** Escoge una opcion : ");
             opcion = Convert.ToInt32(Console.ReadLine());
 
-            if (opcion <= 4)/*validamos si  es introdujo una opcion correcta de las que se le mostro*/
+            if (opcion <= 4) /*validamos si  es introdujo una opcion correcta de las que se le mostro*/
             {
                 /*procedemos a pedir los numeros en caso que la opcion proporcionada sea valida*/
                 Console.Write("*** Dame el primer numero : ");
-            numeroIfAnidado1 = Convert.ToInt32(Console.ReadLine());
+                numeroIfAnidado1 = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("*** Dame el segundo numero : ");
-            numeroIfAnidado2 = Convert.ToInt32(Console.ReadLine());
+                Console.Write("*** Dame el segundo numero : ");
+                numeroIfAnidado2 = Convert.ToInt32(Console.ReadLine());
 
                 /*dependiendo la opcion que eligio se ejecutara el codigo de acontinuacion cada uno en su seccion respectivamente*/
                 if (opcion == 0)
@@ -148,7 +151,7 @@ namespace seccion5_toma_de_decisiones
                     Console.WriteLine("Elaborado en NOV del 2023");
                     Console.WriteLine("Echo por : Ashernandez");
                 }
-            
+
                 /*Suma*/
                 if (opcion == 1)
                 {
@@ -187,6 +190,7 @@ namespace seccion5_toma_de_decisiones
                 /*Division*/
                 if (opcion == 4)
                 {
+                    /*cuando el divisor que es la parte de abajo de la division sea diferente a 0 se podra lograr efectuar correctamente ya que una division entre 0 marca error por lo cual  entra al bloque de codigo en caso contrario  ba directo al else por que marca error*/
                     if (numero2 != 0)
                     {
                         division = numeroIfAnidado1 / numeroIfAnidado2;
@@ -198,15 +202,176 @@ namespace seccion5_toma_de_decisiones
 
                 }
             }
+            /*este es el primer if en caso que de no se  seleccione una opcion valida */
             else
+            {
                 Console.WriteLine("porfavor indica una opcion valida: Error de selecion");
+            }
+
+            /*Escalaera IF ELSE*/
+
+
+            /* forma de realizar if else con el ejemplo anterior forma mas sencilla 
+             
+              // Suma
+            if (opcion == 1)
+            {
+                resultado = num1 + num2;
+            }
+            else
+            {
+                //Resta
+                if (opcion == 2)
+                {
+                    resultado = num1 - num2;
+                }
+                else
+                {
+                    // Multiplicación
+                    if (opcion == 3)
+                    {
+                        resultado = num1 * num2;
+                    }
+                    else
+                    {
+                        //División
+                        if (opcion == 4)
+                        {
+                            if (num2 != 0)
+                            {
+                                resultado = num1 / num2;
+                            }
+                            else
+                            {
+                                Console.WriteLine("No es posible dividir entre cero!");
+                            }
+                        }
+                    }
+                }
+            }          
+                        
+            // Mostramos el resultado
+            Console.WriteLine("El resultado es: {0}", resultado);*/
+
+            Console.WriteLine("*******************************************************************************************************");
+            Console.WriteLine("***********************     Operadores logicos booleanos    (NEGACION)     ****************************");
+            Console.WriteLine("*******************************************************************************************************");
+
+            /*****************************************
+            *     Operadores logicos booleanos       *
+            ******************************************
+            *     signo    /  operador               *
+            * ****************************************
+            *        !     /  Negacion logica        *
+            * ****************************************
+            *        &     /  AND logico             *    
+            * ****************************************
+            *        |     /  OR logico              *    
+            ******************************************
+            *        ^     /  OR exclusivo logico    *    
+            ******************************************
+            *        &&    /  AND logico condicional *    
+            ******************************************
+            *        ||    /  OR logico condicional  *     
+            ******************************************/
+
+            /*negacion !*/
+            bool negacionLogica = true, bateria;
+
+            Console.WriteLine(negacionLogica); // da como resultado true
+            Console.WriteLine(!negacionLogica); //usamos el operador para negar la variable y da como resultado false
+
+            Console.Write("hay bateria? (true/false) :");
+            bateria = Convert.ToBoolean(Console.ReadLine());
+
+            if (!(bateria == true)) //dependiendo de la respuesta del usuario puede dar false o true 
+            { //solo entra a este bloque de codigo si es verdadero, siempre el primer bloque  se accesa solo si es verdadero en operadores booleanos
+                Console.WriteLine("conectar celular");
+            }
+            else
+            {// en caso de que sea false se accede al bloque de codigo
+                Console.WriteLine("no es necesario conectar el celular");
+            }
+
+
+            Console.WriteLine("*******************************************************************************************************");
+            Console.WriteLine("***********************     Operador and &&                                ****************************");
+            Console.WriteLine("*******************************************************************************************************");
+            /*Operador and &&*/
+
+            /*****************************************************
+             *    Oprando    /   operando    /    conjuncion     *
+             *****************************************************
+             *       p       /       q       /     p && q        *
+             *****************************************************
+             *   true        /       true    /       true        *
+             *****************************************************
+             *   true        /       false   /       false       *
+             *****************************************************
+             *   false       /       true    /       false       *
+             *****************************************************
+             *   false       /       false   /       false       *
+             *****************************************************/
+
+            int edadParaManejar;
+            bool licenciaDeManejar;
+
+            Console.Write("Que edad tienes :");
+            edadParaManejar = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Tienes licencia de manejo (true/false):");
+            licenciaDeManejar = Convert.ToBoolean(Console.ReadLine());
+
+            if (edadParaManejar >= 18 && licenciaDeManejar == true)
+            {
+                Console.WriteLine("muchas felicidades");
+            }
+            else
+            {
+                Console.WriteLine("lo siento");
+            }
+
+
+            Console.WriteLine("*******************************************************************************************************");
+            Console.WriteLine("***********************     Operador or ||                                 ****************************");
+            Console.WriteLine("*******************************************************************************************************");
+            /*Operador or  || */
+
+            /*****************************************************
+             *    Oprando    /   operando    /    conjuncion     *
+             *****************************************************
+             *       p       /       q       /     p || q        *
+             *****************************************************
+             *   true        /       true    /       true        *
+             *****************************************************
+             *   true        /       false   /       true        *
+             *****************************************************
+             *   false       /       true    /       true        *
+             *****************************************************
+             *   false       /       false   /       false       *
+             *****************************************************/
+
+            double calPrepa, calExamen;
+
+            Console.Write("puedes darme la calificacion de tu prepa :");
+            calPrepa = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("me puedes dar la calificacion de tu examen :");
+            calExamen = Convert.ToDouble(Console.ReadLine());
+
+            if (calPrepa >= 9 || calExamen >= 9.5)
+            {
+                Console.WriteLine("felicidades tienes beca ");
+            }
+            else
+            {
+                Console.WriteLine("lo siento no podemos darte la beca");           
+            }
 
 
 
-            
-            /*Operador negacion*/
-            /*Operador and*/
-            /*Operador or*/
+
+
             /*Ejercicios operadores logicos booleanos*/
             /*Instruccion switch*/
             /*Ejercicio con swithc*/
