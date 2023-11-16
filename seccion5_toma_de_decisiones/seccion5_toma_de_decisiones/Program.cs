@@ -132,15 +132,22 @@ namespace seccion5_toma_de_decisiones
             Console.Write("*** Escoge una opcion : ");
             opcion = Convert.ToInt32(Console.ReadLine());
 
-            if (opcion <= 4)
+            if (opcion <= 4)/*validamos si  es introdujo una opcion correcta de las que se le mostro*/
             {
-                Console.Write( "*** Dame el primer numero : ");
+                /*procedemos a pedir los numeros en caso que la opcion proporcionada sea valida*/
+                Console.Write("*** Dame el primer numero : ");
             numeroIfAnidado1 = Convert.ToInt32(Console.ReadLine());
 
             Console.Write("*** Dame el segundo numero : ");
             numeroIfAnidado2 = Convert.ToInt32(Console.ReadLine());
 
-
+                /*dependiendo la opcion que eligio se ejecutara el codigo de acontinuacion cada uno en su seccion respectivamente*/
+                if (opcion == 0)
+                {
+                    Console.WriteLine("Programa para operaciones basicas usando la estructura if");
+                    Console.WriteLine("Elaborado en NOV del 2023");
+                    Console.WriteLine("Echo por : Ashernandez");
+                }
             
                 /*Suma*/
                 if (opcion == 1)
@@ -151,7 +158,7 @@ namespace seccion5_toma_de_decisiones
                 /*Resta*/
                 if (opcion == 2)
                 {
-
+                    /*procedemos a dar opcion de como prefiere que se reste dependiendo los numeros proprcionados, el resultado sera difenrente dependiendo la ellecion de como quiere que se resten los datos*/
                     Console.WriteLine("1. numero1 menos numero 2 ");
                     Console.WriteLine("2. numero2 menos numero 1 ");
                     Console.Write("****  elige como quieres que se resten :");
@@ -197,8 +204,6 @@ namespace seccion5_toma_de_decisiones
 
 
             
-            /*Escalaera IF ELSE*/
-            /*Operadores logicos booleanos*/
             /*Operador negacion*/
             /*Operador and*/
             /*Operador or*/
