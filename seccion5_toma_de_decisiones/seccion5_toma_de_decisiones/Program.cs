@@ -322,7 +322,7 @@ namespace seccion5_toma_de_decisiones
             Console.WriteLine("Tienes licencia de manejo (true/false):");
             licenciaDeManejar = Convert.ToBoolean(Console.ReadLine());
 
-            if (edadParaManejar >= 18 && licenciaDeManejar == true)
+            if (edadParaManejar >= 18 && licenciaDeManejar == true) //se tienen que cunplir las dos opciones para entrar en el primer bloque de lo contrario va directo a else
             {
                 Console.WriteLine("muchas felicidades");
             }
@@ -359,7 +359,7 @@ namespace seccion5_toma_de_decisiones
             Console.Write("me puedes dar la calificacion de tu examen :");
             calExamen = Convert.ToDouble(Console.ReadLine());
 
-            if (calPrepa >= 9 || calExamen >= 9.5)
+            if (calPrepa >= 9 || calExamen >= 9.5) // si se cumple una u otra condicion entrara en el primer bloque si  no se cumple ninguna va directo a else
             {
                 Console.WriteLine("felicidades tienes beca ");
             }
