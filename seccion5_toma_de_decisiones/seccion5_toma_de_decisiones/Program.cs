@@ -368,17 +368,171 @@ namespace seccion5_toma_de_decisiones
                 Console.WriteLine("lo siento no podemos darte la beca");           
             }
 
-
-
-
-
+            Console.WriteLine("*******************************************************************************************************");
+            Console.WriteLine("***********************     Operador logicos booleanos                     ****************************");
+            Console.WriteLine("*******************************************************************************************************");
             /*Ejercicios operadores logicos booleanos*/
+
+            // Variables
+            float energia; //variable para declarar numeros con decimales
+            bool propulsorIzquierdo, propulsorDerecho; //booleano solo puede tomar valores true o false
+
+            Console.Write("Ingrese el nivel de energía: ");
+            energia = Convert.ToSingle(Console.ReadLine()); // ToSingle es para convertir de un string a un flotante 
+
+            Console.Write("¿El propulsor derecho está en buen estado? (true/false): ");
+            propulsorDerecho = Convert.ToBoolean(Console.ReadLine()); //ToBoolean  es para convertir de un string a un booleano que es un valor 0 o 1 , true o false
+
+            Console.Write("¿El propulsor izquierdo está en buen estado? (true/false): ");
+            propulsorIzquierdo = Convert.ToBoolean(Console.ReadLine()); //ToBoolean  es para convertir de un string a un booleano que es un valor 0 o 1 , true o false
+
+            if (((((propulsorDerecho) && (propulsorIzquierdo)) == true) && (energia >= 75)) || ((((propulsorDerecho) || (propulsorIzquierdo)) == true) && (energia == 100)))
+                //si se cuumple las dos condiciones  es tru y la energia es  mayor  es true o la condicion izquiera o derecha es true sera true y energia es 100 es true
+                //si la toda la sentencia primera es verdadera o la segunda sentencia es verdadera entonces entra en el primer bloque si no va directo a else
+            {
+                Console.WriteLine("Puedes despegar");
+            }
+            else
+            {
+                Console.WriteLine("Lo siento, no es seguro despegar");
+            }
+
+            Console.WriteLine("*******************************************************************************************************");
+            Console.WriteLine("***********************     Operador switch                                ****************************");
+            Console.WriteLine("*******************************************************************************************************");
             /*Instruccion switch*/
-            /*Ejercicio con swithc*/
-            /*Seccion switch*/
-            /*Etiqueta case default*/
-            /*Ejercicio remplazo if else por switch*/
+
+            // Se necesita un programa que realice las 4 operaciones básicas: suma, resta, multiplicación y división, a partir de dos números, la operación deseada será elegida por el usuario.
+
+            // Variables
+            decimal numSwitch1, numSwitch2, resultadoSwitch = 0.0M;
+            byte opcionSwitch;
+
+            // Mostramos el menú
+            Console.WriteLine("1. Suma");
+            Console.WriteLine("2. Resta");
+            Console.WriteLine("3. Multiplicación");
+            Console.WriteLine("4. División");
+
+            // Pedimos al usuario que escoja una opción
+            Console.Write("Escoge una opción: ");
+            opcionSwitch = Convert.ToByte(Console.ReadLine()); // ToByte lo usamos para convertimos un string a byte  numero enteros
+
+            // Pedimos el primer número
+            Console.Write("Dame el primer número: ");
+            numSwitch1 = Convert.ToDecimal(Console.ReadLine()); //ToDecimal lo usamos para convertir un string a decimal  numeros enteros con decimal
+
+            // Pedimos el segundo número
+            Console.Write("Dame el segundo número: ");
+            numSwitch2 = Convert.ToDecimal(Console.ReadLine()); //ToDecimal lo usamos para convertir un string a decimal  numeros enteros con decimal
+
+            switch (opcionSwitch)     //evaluamos la opcion elegida por el usuario
+            {
+                case 1:
+                    resultadoSwitch = numSwitch1 + numSwitch2; //suma
+                    break;
+                case 2:
+                    resultadoSwitch = numSwitch1 - numSwitch2; //resta
+                    break;
+                case 3:
+                    resultadoSwitch = numSwitch1 * numSwitch2; //multiplicacion
+                    break;
+                case 4:
+                    if (numSwitch2 != 0) // entra al primer bloque solo si el numero dos es diferente a 0 ya que algo dividido entre 0 da error
+                    {
+                        resultadoSwitch = numSwitch1 / numSwitch2; //divicion 
+                    }
+                    else
+                    {
+                        Console.WriteLine("No es posible dividir entre cero"); // 0 entre 0 es error damos el siguiente mensaje
+                    }
+                    break;
+                default: //ninguna opcion valida por el usuario 
+                    Console.WriteLine("Ingresa una opción valida"); //
+                    break;
+            }
+
+            // Mostramos el resultado
+            Console.WriteLine("El resultado es: {0}", resultadoSwitch); //mostramos el resultado
+
+            Console.WriteLine("*******************************************************************************************************");
+            Console.WriteLine("***********************     Operador constantes                            ****************************");
+            Console.WriteLine("*******************************************************************************************************");
             /*Las constantes*/
+
+            const int a = 10; //declaramos una constante a con un valor de a
+            Console.WriteLine("la constante es = " + a);
+
+            // a = 10;  // no podemos definir a con un nuevo valor devido a que  es una constante marcara un error
+            //Console.WriteLine("la constante es = " + a);  // si imprimos de nuevo la variable solo mostrara 10 pero antes marca el error y no compilara el prgrama
+
+            Console.WriteLine("*******************************************************************************************************");
+            Console.WriteLine("***********************     Tarea                            ****************************");
+            Console.WriteLine("*******************************************************************************************************");
+
+            //tarea del programa  seccion toma de decisiones
+
+            int mes;
+
+            Console.WriteLine("me puedes dar el numero del mes que quieres ");
+            mes = Convert.ToInt32(Console.ReadLine());
+
+            switch (mes)
+            {
+                case 1:
+                    Console.WriteLine("Enero");
+                    break; 
+                case 2:
+                    Console.WriteLine("Febrero");
+                    break; 
+                case 3:
+                    Console.WriteLine("Marzo");
+                    break;
+                case 4:
+                    Console.WriteLine("Abril");
+                    break; 
+                case 5:
+                    Console.WriteLine("Mayo");
+                    break;
+                case 6:
+                    Console.WriteLine("Junio");
+                    break;
+                case 7:
+                    Console.WriteLine("Julio");
+                    break;
+                case 8:
+                    Console.WriteLine("Agosto");
+                    break;
+                case 9:
+                    Console.WriteLine("Septiembre");
+                    break;
+                case 10:
+                    Console.WriteLine("Octubre");
+                    break;
+                case 11:
+                    Console.WriteLine("Noviembre");
+                    break;
+                case 12:
+                    Console.WriteLine("Diciembre");
+                    break;
+                default : Console.WriteLine("No digitaste ningun numero de mes valido");
+                    break;
+            }
+
+            //programa que determina si es par o impar
+            long numeroParImpar;
+
+            Console.Write("Dame un número y te diré si es par o impar: ");
+            numeroParImpar = Convert.ToInt64(Console.ReadLine());
+
+            if ((numeroParImpar % 2) == 0) // si al dividir no da residuo en este caso la division es exacta sera para ejemplo 4 / 2  es 2 no deja ningun residuo por lo tanto es par, si es impar ejemplo 3 / 2  es 1.5 deja como residuo .5 por lo cual no es igual a 0  y es impar
+            {
+                Console.WriteLine("El número es par");
+            }
+            else
+            {
+                Console.WriteLine("El número es impar");
+            }
 
 
             Console.ReadKey();
