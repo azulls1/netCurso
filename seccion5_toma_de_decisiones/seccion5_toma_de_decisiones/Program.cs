@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -365,7 +366,7 @@ namespace seccion5_toma_de_decisiones
             }
             else
             {
-                Console.WriteLine("lo siento no podemos darte la beca");           
+                Console.WriteLine("lo siento no podemos darte la beca");
             }
 
             Console.WriteLine("*******************************************************************************************************");
@@ -387,8 +388,8 @@ namespace seccion5_toma_de_decisiones
             propulsorIzquierdo = Convert.ToBoolean(Console.ReadLine()); //ToBoolean  es para convertir de un string a un booleano que es un valor 0 o 1 , true o false
 
             if (((((propulsorDerecho) && (propulsorIzquierdo)) == true) && (energia >= 75)) || ((((propulsorDerecho) || (propulsorIzquierdo)) == true) && (energia == 100)))
-                //si se cuumple las dos condiciones  es tru y la energia es  mayor  es true o la condicion izquiera o derecha es true sera true y energia es 100 es true
-                //si la toda la sentencia primera es verdadera o la segunda sentencia es verdadera entonces entra en el primer bloque si no va directo a else
+            //si se cuumple las dos condiciones  es tru y la energia es  mayor  es true o la condicion izquiera o derecha es true sera true y energia es 100 es true
+            //si la toda la sentencia primera es verdadera o la segunda sentencia es verdadera entonces entra en el primer bloque si no va directo a else
             {
                 Console.WriteLine("Puedes despegar");
             }
@@ -481,16 +482,16 @@ namespace seccion5_toma_de_decisiones
             {
                 case 1:
                     Console.WriteLine("Enero");
-                    break; 
+                    break;
                 case 2:
                     Console.WriteLine("Febrero");
-                    break; 
+                    break;
                 case 3:
                     Console.WriteLine("Marzo");
                     break;
                 case 4:
                     Console.WriteLine("Abril");
-                    break; 
+                    break;
                 case 5:
                     Console.WriteLine("Mayo");
                     break;
@@ -515,7 +516,8 @@ namespace seccion5_toma_de_decisiones
                 case 12:
                     Console.WriteLine("Diciembre");
                     break;
-                default : Console.WriteLine("No digitaste ningun numero de mes valido");
+                default:
+                    Console.WriteLine("No digitaste ningun numero de mes valido");
                     break;
             }
 
@@ -533,6 +535,37 @@ namespace seccion5_toma_de_decisiones
             {
                 Console.WriteLine("El número es impar");
             }
+
+            float minutosTarea3;
+
+            Console.Write("Ingresa el tiempo que estuviste en el estacionamieno (en minutos) ");
+            minutosTarea3 = Convert.ToSingle(Console.ReadLine());
+
+            if ((minutosTarea3 >= 0) && (minutosTarea3 <= 60))
+            {
+                Console.WriteLine("pagar  $5.00, gracias");
+            }
+            else
+            {
+                if ((minutosTarea3 >= 60) && (minutosTarea3 <= 120))
+                {
+                    Console.WriteLine("pagar  $10.00, gracias");
+                }
+                else
+                {
+                    if (minutosTarea3 > 120)
+                    {
+                        Console.WriteLine("pagar  $15.00, gracias");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Gracias");
+                    }
+                }
+            }
+
+
+
 
 
             Console.ReadKey();
