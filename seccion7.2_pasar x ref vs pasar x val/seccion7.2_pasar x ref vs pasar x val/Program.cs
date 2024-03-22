@@ -58,6 +58,6 @@ namespace seccion7._2_pasar_x_ref_vs_pasar_x_val
             //modifcamos el valor del parametro
             numPa = 20;
         }
-        //************* Fin metodo pasar por referencia****************
+        //************* Fin metodo pasar por referencia****************.
     }
 }

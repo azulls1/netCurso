@@ -27,7 +27,7 @@ namespace seccion7._3_palabra_OUT
         
         static void prueba(out int numPa, out string textoPa, out double numDouPa)// se tiene que poner antes out para indicar que el argumento que fue pasado y guardado en parametro no estaba inicializado y a qui se modifico e incializo regresando el valor a main, se puede aplicar para varios valores
         {
-            //modifcamos el valor de los parametro
+            //modifcamos el valor de los parametro.
             numPa = 20;
             textoPa = "texto prueba";
             numDouPa = 7.5;
