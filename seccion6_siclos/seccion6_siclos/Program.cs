@@ -301,7 +301,32 @@ namespace seccion6_siclos
             Console.WriteLine("******   Tarea 4.1   calcule la potencia, ya sea negativa o positiva de cualquier exponente    ********");
             Console.WriteLine("******************************************************************************************************");
 
+            //Variables
+            int numero11, divisor11, numDivisores11 = 0;
 
+            //Bucle exterior, se encarga de recorrer los números del 2 al 100
+            for (numero11 = 2; numero11 <= 100; numero11++)
+            {
+                //Bucle anidado, se encarga de verificar el número de divisores
+                for (divisor11 = 1; divisor11 <= numero11; divisor11++)
+                {
+                    if (numero11 % divisor11 == 0)
+                    {
+                        numDivisores11 += 1; //numDivisores = numDivisores + 1;
+                    }
+                }
+
+                //Verificamos que el número de divisiores sea igual a 2
+                if (numDivisores11 <= 2)
+                {
+                    Console.WriteLine(numero11);
+                }
+
+                //Reiniciamos el conteo del número de divisores
+                numDivisores11 = 0;
+            }
+
+            Console.ReadKey();
 
 
 

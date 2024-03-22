@@ -10,42 +10,39 @@ namespace seccion_de_prueba_individual
     {
         static void Main(string[] args)
         {
-            //Hacer un programa que calcule la potencia, ya sea negativo o positivo de cualquier exponente.
-            int numero, exponente, i;
-            double resultado = 1, resultadoNegativo;
 
-            Console.WriteLine("ingresa el numero que deseas ");
-            numero=Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("ingresa el exponente ");
-            exponente= Convert.ToInt32(Console.ReadLine());
+            //Variables
+            int numero, divisor, numDivisores = 0;
 
-            if (exponente < 0) //si el exponente es negatico, entonces
+            //Bucle exterior, se encarga de recorrer los números del 2 al 100
+            for (numero = 2; numero <= 100; numero++)
             {
-                exponente *= -1;//// exponente = exponente * -1  ---> convierte el exponente a positivo
-                for (i = 1; i <= exponente; i++)// Iteración desde 1 hasta llegar al exponente
+                //Bucle anidado, se encarga de verificar el número de divisores
+                for (divisor = 1; divisor <= numero; divisor++)
                 {
-                    resultado *= numero;
-                    // Dividimos al 1 entre el resultado y se lo asignamos a una nueva variable
-                    resultadoNegativo = (1 / resultado);
-
-                    //Mostramos el resultado
-                    Console.WriteLine("{0}^-{1} = {2}", numero, exponente, resultadoNegativo);
-                }
-            }
-            else// Si el exponente no es menor que cero, por lo tanto es mayor o igual
-            {
-                for (i = 1; i <= exponente; i++)
-                {
-                    resultado *= numero;
+                    if (numero % divisor == 0)
+                    {
+                        numDivisores += 1; //numDivisores = numDivisores + 1;
+                    }
                 }
 
-                //Mostramos el resultado
-                Console.WriteLine("{0}^{1} = {2}", numero, exponente, resultado);
+                //Verificamos que el número de divisiores sea igual a 2
+                if (numDivisores <= 2)
+                {
+                    Console.WriteLine(numero);
+                }
 
-
+                //Reiniciamos el conteo del número de divisores
+                numDivisores = 0;
             }
 
-
-
+            Console.ReadKey();
         }
-    } 
+
+
+
+    }
+
+
+}
+ 
