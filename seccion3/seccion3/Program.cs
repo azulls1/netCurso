@@ -13,7 +13,7 @@ namespace seccion3
     {
         static void Main(string[] args)
         {
-            /*Ejemplo 1. como pedir datos al usuario con el metodo ReadLine*/
+            /*Ejemplo 1. como pedir datos al usuario con el metodo ReadLinee*/
 
             string nombre;
             /*preguntamos al  nombre del usuario*/
