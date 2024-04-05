@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "seccion6.1_Matrices_Unidimencionales", "seccion6.1_Matrices_Unidimencionales\seccion6.1_Matrices_Unidimencionales.csproj", "{0876332C-D4DE-4A4C-8DAF-045915D255C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0876332C-D4DE-4A4C-8DAF-045915D255C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0876332C-D4DE-4A4C-8DAF-045915D255C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0876332C-D4DE-4A4C-8DAF-045915D255C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0876332C-D4DE-4A4C-8DAF-045915D255C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FC3C7F4F-2CF3-4688-920F-F07E7DCABA29}
+	EndGlobalSection
+EndGlobal
