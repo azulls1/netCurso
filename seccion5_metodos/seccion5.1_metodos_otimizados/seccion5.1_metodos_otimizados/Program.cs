@@ -142,8 +142,8 @@ namespace seccion7._1_metodos_otimizados
 
         }
         //[Modificador][tipo informacion][identificador][parametros] 
-        
-        static int ingresarNumero (string peticion)
+
+        static int ingresarNumero(string peticion)
         {
             //caribale local al metodo
             int numero;
