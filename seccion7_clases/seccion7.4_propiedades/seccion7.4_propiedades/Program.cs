@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 
-namespace Seccion7._2_Acceder_campos_clase
+namespace seccion7._4_propiedades
 {
     internal class Program
     {
@@ -16,27 +17,14 @@ namespace Seccion7._2_Acceder_campos_clase
             //seccion5.2_pasar_x_ref_vs_pasar_x_val
 
             //variable local
-            bool acelerar;
+            //bool acelerar;
 
             //instanciando a la clase automovil
             //el lado izquiero es la referencia  //el lado derecho crea el tipo de objeto
             automovil automovil1 = new automovil();
 
-            //Acceder a los campos de la clase (7.2.1)
-            automovil1.color = "rojo";                 //* usamos automovil1  ya que es la referencia del tipo de objeto (la instanciasion)
-            automovil1.combustible = "disel";          //* usamos automovil1  ya que es la instancia del objeto de de la clase automovil 
-
-            //forma de acceder a un campo y imprimirlo
-            Console.WriteLine("el tipo de combustible es : {0}", automovil1.combustible);
-
-            //acceder a los metodos de la clase (7.2.2)
-    //variable local =  instancia . clase
-           acelerar =  automovil1.Acelerar();
-
-            if (acelerar) // si acelerar es true entra al codigo, siempre if evalua primero si es verdadero y entrara al primer bloque de codigo 
-            {
-                Console.WriteLine("Acelerando correctamente");
-            }
+            //mostramos el campo privado
+            Console.WriteLine("el colo es : {0} ", automovil1.Color);
 
         }
 
@@ -49,10 +37,26 @@ namespace Seccion7._2_Acceder_campos_clase
         //campos
         //color, el numero de puertas, combustible, motor, año, num serie
 
-        public string color, modelo, combustible;
-        public byte año, numPuertas;
-        public int ccMotor;
 
+        //los campos usan la notacion camello (minusculas seguido de una mayuscula para concatenar)
+        private string color = "rojo", modelo, combustible;   //campos, al ser un campo privado se puede notar al poner el cursos encima un candado
+        private byte año, numPuertas;                //campos, al ser un campo privado se puede notar al poner el cursos encima un candado
+        private int ccMotor;                         //campos, al ser un campo privado se puede notar al poner el cursos encima un candado
+
+        //propiedades
+        //[acceso] [tipo] [nombre]
+        public string Color//las propiedades usan una notacion pascal (Inician con mayuscula)
+        {
+            //descriptor de acceso get
+            get { return color; }
+
+            
+
+            //descriptor de acceso set
+
+
+
+        }
 
         //metodos
         //acelerar, frenar, velocidades, seguros, luces
@@ -61,6 +65,7 @@ namespace Seccion7._2_Acceder_campos_clase
         {
             bool acelerar = true;
             Console.WriteLine("Acelerar");
+            prueba();
             return acelerar;
         }
 
@@ -80,10 +85,11 @@ namespace Seccion7._2_Acceder_campos_clase
         //instancia de una clase
 
 
+        public static void prueba() //classe estatic
+        {
+            Console.WriteLine("Soy un metodo estatico");
+        }
+
 
     }
-
-
-
-
 }
