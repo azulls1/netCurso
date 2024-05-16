@@ -22,7 +22,7 @@ namespace Seccion7._2_Acceder_campos_clase
             //el lado izquiero es la referencia  //el lado derecho crea el tipo de objeto
             automovil automovil1 = new automovil();
 
-            //Acceder a los campos de la clase (7.2.1)
+            //Acceder a los campos de la clase (7.2.1).
             automovil1.color = "rojo";                 //* usamos automovil1  ya que es la referencia del tipo de objeto (la instanciasion)
             automovil1.combustible = "disel";          //* usamos automovil1  ya que es la instancia del objeto de de la clase automovil 
 

@@ -59,7 +59,7 @@ namespace seccion7._1_Declaracion_de_una_clase
             Console.WriteLine("Cambio de velocidad");
         }
 
-        //instancia de una clase
+        //instancia de una clase.
 
 
 
