@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Timers;
 
-namespace seccion7._4_propiedades
+namespace Seccion7._5_miembros_forma_expresion
 {
     internal class Program
     {
@@ -51,16 +50,19 @@ namespace seccion7._4_propiedades
         public string Color//las propiedades usan una notacion pascal (Inician con mayuscula)
         {
             //descriptor de acceso get (se traduce  como Obtener)
-            get { return color; }
-            
+            //miembro => expresion
+            get => color;
+
         }
         public string Combustible
         {
             //descriptor de acceso get para validar que se le asigno el valor correspondiente
             get { return combustible; }
             //descriptor de acceso set (se traduce como colocar) (hace la funcion de un metodo que recibe arugumentos en sus parametros pero no retorna ningun valor )
-            set { combustible = value; }
+            set => combustible = value;     /*set { combustible = value; }*/
         }
+
+        //miembro => expresion
 
         //metodos
         //acelerar, frenar, velocidades, seguros, luces

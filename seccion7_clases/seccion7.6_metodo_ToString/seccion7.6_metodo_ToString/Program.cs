@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Timers;
 
-namespace seccion7._4_propiedades
+namespace seccion7._6_metodo_ToString
 {
     internal class Program
     {
@@ -24,11 +23,12 @@ namespace seccion7._4_propiedades
             automovil automovil1 = new automovil();
 
             //mostramos el campo privado
-            Console.WriteLine("el colo es : {0} ", automovil1.Color);
+           // Console.WriteLine("el colo es : {0} ", automovil1.Color);
 
             //asinandole un valor a un campo privado y mostrandolo
             automovil1.Combustible = "Diesel";
-            Console.WriteLine("el tipo de combustible es : {0}", automovil1.Combustible);
+            // Console.WriteLine("el tipo de combustible es : {0}", automovil1.Combustible);
+            Console.WriteLine(automovil1.ToString());
         }
 
 
@@ -42,25 +42,27 @@ namespace seccion7._4_propiedades
 
 
         //los campos usan la notacion camello (minusculas seguido de una mayuscula para concatenar)
-        private string color = "rojo", modelo, combustible;   //campos, al ser un campo privado se puede notar al poner el cursos encima un candado
-        private byte año, numPuertas;                //campos, al ser un campo privado se puede notar al poner el cursos encima un candado
-        private int ccMotor;                         //campos, al ser un campo privado se puede notar al poner el cursos encima un candado
+        private string color = "rojo", modelo = "ZB30", combustible , año = "1998", numPuertas="4";   //campos, al ser un campo privado se puede notar al poner el cursos encima un candado
+        private int ccMotor  = 1500;                         //campos, al ser un campo privado se puede notar al poner el cursos encima un candado
 
         //propiedades
         //[acceso] [tipo] [nombre]
         public string Color//las propiedades usan una notacion pascal (Inician con mayuscula)
         {
             //descriptor de acceso get (se traduce  como Obtener)
-            get { return color; }
-            
+            //miembro => expresion
+            get => color;
+
         }
         public string Combustible
         {
             //descriptor de acceso get para validar que se le asigno el valor correspondiente
             get { return combustible; }
             //descriptor de acceso set (se traduce como colocar) (hace la funcion de un metodo que recibe arugumentos en sus parametros pero no retorna ningun valor )
-            set { combustible = value; }
+            set => combustible = value;     /*set { combustible = value; }*/
         }
+
+        //miembro => expresion
 
         //metodos
         //acelerar, frenar, velocidades, seguros, luces
@@ -87,11 +89,20 @@ namespace seccion7._4_propiedades
         }
 
         //instancia de una clase
-
-
+        //Metodo esatico
         public static void prueba() //classe estatic
         {
             Console.WriteLine("Soy un metodo estatico");
+        }
+
+        //Invalidando el metodo ToString
+        public override string ToString()
+        {
+            string mensaje;
+
+            mensaje = "Modelo: " + modelo + "\nColor: " + color + "\nAño: " + año + "\nPuertas: " + numPuertas + "\nTipo de combustible: " + combustible + "\nMotor: " + ccMotor;
+
+            return mensaje;
         }
 
 
